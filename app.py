@@ -5,7 +5,7 @@ import requests
 import time
 from sklearn.metrics.pairwise import cosine_similarity
 
-movies, tfidf = pickle.load(open("recommender.pkl", "rb"))
+movies, tfidf = pickle.load(open("recommender_reduced.pkl", "rb"))
 tfidf_matrix = tfidf.transform(movies['content'])
 similarity = cosine_similarity(tfidf_matrix, tfidf_matrix)
 
